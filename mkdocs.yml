@@ -1,0 +1,23 @@
+site_name: trncb
+
+theme:
+  name: readthedocs
+  custom_dir: overrides
+
+
+plugins:
+- tags:
+    tags_file: tags.md
+- search
+- mkdocs-nav-enhancements
+- include_dir_to_nav:
+    sort_file: true
+    reverse_sort_file: true
+    sort_directory: true
+    reverse_sort_directory: true
+
+
+nav:
+- Home: index.md
+- Tags: tags.md
+- Blogs: blogs
