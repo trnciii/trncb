@@ -1,18 +1,14 @@
-# Welcome to MkDocs
+# とらんしー3(ときどき9)
+
+Girls2, Lucky2, コンピュータ, プログラミング, グラフィックス技術に興味があります。
+福岡に住んでいます。
+tweet より長くなりそうな文章をここに書くことにしました。
 
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## LINK
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* [@trnciii](https://www.twitter.com/trnciii)
+* [@trncix](https://www.twitter.com/trncix)
+* [github](https://www.github.com/trnciii)
+* [instagram](https://www.instagram.com/trnciii)
+* [tiktok](https://www.tiktok.com/@trnciii)
