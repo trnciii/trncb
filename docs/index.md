@@ -11,4 +11,3 @@ tweet より長くなりそうな文章をここに書くことにしました�
 * [@trncix](https://www.twitter.com/trncix)
 * [github](https://www.github.com/trnciii)
 * [instagram](https://www.instagram.com/trnciii)
-* [tiktok](https://www.tiktok.com/@trnciii)
