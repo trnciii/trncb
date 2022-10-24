@@ -1,6 +1,6 @@
 <a class="{% if not nav_item.is_link %}reference internal{% endif %}{% if nav_item.active%} current{%endif%}" href="{% if not nav_item.is_section %}{{ nav_item.url|url }}{% else %}#{% endif %}">
 {%- if nav_item.is_page and nav_item.meta.is_blog %}
-	{{nav_item.meta.date}}
+	<font style="color: pink;">{{nav_item.meta.date}}</font>
 {%- endif %}
 {{ nav_item.title }}
 </a>
