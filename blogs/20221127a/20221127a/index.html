@@ -125,37 +125,47 @@ In some cases, using pip directly with blender's bundled python destroys the exi
 <li>Blender 3.3</li>
 </ul>
 <h2 id="move-blender-python-into-venv">Move Blender Python into venv.</h2>
-<p>To separate the environments, I create a virtual environment with venv and move blender's python environment in it.
+<p>To separate the environments, I create a virtual environment of blender's python environment with venv.
 It allows us to stay within the familiar way of switching multiple python environments.</p>
 <ul>
-<li>First, create the virtual environment somewhere. I decided to name it <code>blender3.3</code>.</li>
+<li>First, rename the existing blender's python as the original environment and keep it separated from blender. I decided to rename it <code>python-old</code>.</li>
 </ul>
-<pre><code class="language-sh">cd where/you/want
-python3 -m venv blender3.3
+<pre><code class="language-sh">mv blender-3.3.1-linux-x64/3.3/python blender-3.3.1-linux-x64/3.3/python-old
 </code></pre>
 <ul>
-<li>Copy Blender's python environment.
-blender's python is different from ordinal, so you have to copy and overwrite all bundled files to the environment you just created now.
-In my case,</li>
+<li>Create a new virtual environment (<code>blender3.3</code> here). You can create it where you want, but you have to use blender's python.</li>
 </ul>
-<pre><code class="language-sh">cp -rf blender-3.3.1-linux-x64/3.3/python/*  blender3.3/
+<pre><code class="language-sh">blender-3.3.1-linux-x64/3.3/python-old/bin/python3.10 -m venv blender3.3
 </code></pre>
 <ul>
-<li>Link your environment to Blender.
-Remove (or rename for backup) the bundled python directory and replace with the symlink to the new one.</li>
+<li>
+<p>Copy Blender's python environment.
+As blender has different settings from your default environment, you have to copy and overwrite all libraries to the new environment.
+Just copy the <code>python-old/lib</code> folder and paste under the new <code>blender3.3/</code> then merge files.</p>
+</li>
+<li>
+<p>Link your environment to Blender.
+Create a symlink so Blender can read the virtual environment you created.</p>
+</li>
 </ul>
 <pre><code class="language-sh">ln -s blender3.3 blender-3.3.1-linux-x64/3.3/python
 </code></pre>
 <ul>
-<li>At the end, check that Blender works correctly.
-You can now activate your new environment, install packages, and load them from blender.</li>
+<li>
+<p>Check everything work correctly.</p>
+<ul>
+<li>Blender does not crash.</li>
+<li>Enter the new environment (<code>source blender3.3/bin/activate</code>) and the same version of python is working.</li>
+<li>Install a new package and you can import it from blender</li>
 </ul>
-<pre><code class="language-sh">source blender3.3/bin/activate
-pip install matplotlib
-</code></pre>
-<pre><code class="language-python"># in blender's internal console
-import matplotlib
-</code></pre>
+</li>
+<li>
+<p><strong>Optional</strong> Add python headers in <code>include</code> for C/C++ development.
+If you need python headers to develop a python module in C/C++, you can download the source from python release and put them in <code>python-old/include/python3.10</code>.
+Take care to use the correct version, to place them in the <em>old</em> environment, and to keep <code>pyconfig.h</code> that may already exists.
+Now it can be found in the include path by activating the environment.</p>
+</li>
+</ul>
               
             </div>
           </div><footer>
